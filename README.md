@@ -31,3 +31,46 @@ Applying the above concepts to the given project, we know that the formula for R
 * If there is an excess supply of phones into the market, the price of the phones would increase, dropping its demand, thereby dropping the actual quantity purchased.
 * Similarly, if there is a great requirement (demand) of phones in the market, and if suppliers are not able to produce as much, the supply will be the constraint for the above equation.
 
+The functions we will be using for the calculation of the Time Value of Money problem is Excel's built-in function called ```NPV(rate, values)``` and ```numpy_financial```'s ```npv(interest_rate, cash_flow)``` function. NPV, or Net Present Value, is the difference between the present values of the cash flow and the initial investment of a project, and this is calculated to predict the profitability of a project, and is a measure widely used in capital budgeting and investment planning.
+
+### Solutions Overview - Excel and Python:
+* To begin, I first created a column/array called Demand, where I calculated the demand per year based on the above conditions for machine purchases.
+  * As the company had to purchase it's first machine in the first year, and then complete all machine purchases before beginning to advertise, I used a condition to check whether the given year had exceeded the planned number of machines the company wished to buy.
+  * If it did, the demand would increase by 2% using the formula ```val = d_1 * (1 + g_d) ** (i - n_machines)```. In this case,
+    * ```val``` is the value being inputted into the demand array/column
+    * ```d_1``` is the initial demand for the phones produced by the company
+    * ```g_d``` is the growth in demand after the company begins advertising
+    * ```i``` is the loop counter than runs for the forecasted number of years for which the company is calculating its NPV.
+    * ```n_machines``` is the number of machines the company wishes to purchase.
+* I then created a column to calculate the Revenue of phones manufactured by the company. To do this, I multiplied the price of the phone with the quantity, which, as mentioned above, changed with the changing demands.
+  * To track the changes to the quantity, I evaluated the inputs through varying conditions, including checking whether the current year indicated changes to quantity supplied. For instance, if the current year was less than the lifespan of a single machine:
+   
+   ```
+   elif i < n_life and j < n_life:
+    supply = n_phones * j
+    quantity = min(demand[j], supply)
+   ```
+  
+  * Or if the current year stood in the period of when the company's machines would begin deprecating:
+   
+   ```
+   elif i%n_machines != 0 and i%n_life < n_machines:
+    supply = n_phones * (n_machines - (i%n_life))
+    quantity = min(demand[j], supply)
+   ```
+  * From the above, we find that:
+    * ```n_life``` is the expected lifespan of the machine,
+    * ```i, j``` are the loop counters that range over the maximum mentioned number of years and the length of the demand array
+    * ```supply``` is the calculated supplied value by the company, and
+    * ```quantity``` follows the above condition of taking the minimum of demand and supply to calculate the expected revenue for that year.
+  * Similar calculations were made for finding the variable cost of the phones produced
+* I then used conditions to check when a machine would operate beyond its lifespan, thereby becoming scrap. To do this, I checked whether the year was greater than the expected lifespan of a single machine, and its difference with the single machine was less than or equal to the number of machines. A snippet is shown here:
+  ```
+  if i > n_life and i - n_life <= n_machines:
+   scrap_array.insert(i, price_scrap)
+  ```
+  * ```scrap_array``` is the array created to check and calculate whether the machine for that year has passed its working lifetime.
+  * ```price_scrap``` is the variable used to denote the $<i>p<sub>scrap</sub></i>
+* To calculate the cash flow for the year, I used the Revenue, variable cost of producing the phone, the equity investment for the year, and the calculated scrap array using the following formula:
+  $`Cash flow = Revenue - Variable Cost - Investment + P`$
+* Lastly, I calculated the NPV on Excel and Python using the built-in functions to obtain the NPV of the project. Since the NPV is positive, we can say that the project is profitable, and can be picked up by the company for future growth.
