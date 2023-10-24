@@ -25,7 +25,7 @@ A concept in microeconomics, known as the law of supply and demand, plays an imp
 
 These curves can be plotted using a graph, with Quantity on the x-axis, Price on the y-axis, and S and D being the Supply and Demand curve respectively. If the supply curve shifts to the left, we will have a decrease in supply, meaning that the quantity would decrease, with the pricing of the product increasing, dropping the product's demand. The converse is true for the case of demand.
 
-![Screenshot of the supply and demand curve](/Images/Supply_and_Demand_Curve_with_Equilibrium.webp?raw=true "Supply and Demand Graph")
+![Screenshot of the supply and demand curve](/Project-1-TVM-Model/Images/Supply_and_Demand_Curve_with_Equilibrium.webp?raw=true "Supply and Demand Graph")
 
 Applying the above concepts to the given project, we know that the formula for Revenue is $`Revenue = Price * Quantity`$. In this instance, the price of the phone is already given, but the factor that changes with the dynamic demand for the phones is quantity. It is important to note that everything produced will not be sold, as it has to match the required demand for the year. Therefore, we take quantity as the ```min(Demand, Supply)```, because:
 * If there is an excess supply of phones into the market, the price of the phones would increase, dropping its demand, thereby dropping the actual quantity purchased.
