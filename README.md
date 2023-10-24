@@ -5,7 +5,7 @@
 # Financial Modeling Projects
 This repository contains projects that cover the basics of Financial Modeling, using the Financial Modeling course available on [GitHub](https://nickderobertis.github.io/fin-model-course/), taught by Nick DeRobertis, with lecture videos and tutorials available on [YouTube](https://www.youtube.com/playlist?list=PLACKX9tziAQJSk4YSGN0N2II985HTIuHD). This course helped me gain a better understanding and implementation of Financial Modeling by using tools like Excel and Python covering basics of Financial Modeling, such as TVM Models, Probabilistic Loan Pricing, etc.
 
-This file will cover all projects listed in the course, along with Excel Worksheets and Jupyter Lab Notebooks for each project. The Project Titles are listed here: TVM Model, Probabilistic Loan Pricing, Monte Carlo Cost of Capital, and Full DCF Valuation. 
+This file will cover all projects listed in the course, along with Excel Worksheets and Jupyter Lab Notebooks for each project. The Project Titles are listed here: [TVM Model](#-tvm-model), Probabilistic Loan Pricing, Monte Carlo Cost of Capital, and Full DCF Valuation. 
 
 ## 📋 TVM Model
 In this project, I am tasked with building a model which will help determine how many machines the startup I work for must invest in and how much should the company spend on marketing its phones. There are several conditions to be aware of, all of which are listed below:
@@ -74,3 +74,5 @@ The functions we will be using for the calculation of the Time Value of Money pr
 * To calculate the cash flow for the year, I used the Revenue, variable cost of producing the phone, the equity investment for the year, and the calculated scrap array using the following formula:
   $`Cash flow = Revenue - Variable Cost - Investment + P`$
 * Lastly, I calculated the NPV on Excel and Python using the built-in functions to obtain the NPV of the project. Since the NPV is positive, we can say that the project is profitable, and can be picked up by the company for future growth.
+
+That concludes the first project - my version and understanding of the TVM Model, both in Excel and Python!
