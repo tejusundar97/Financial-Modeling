@@ -1,6 +1,6 @@
 <b><i>Author: </i></b>Tejaswini Sundar
 
-<b><i>Date: </i></b>October 24, 2023
+<b><i>Date: </i></b>November 15, 2023
 
 # Financial Modeling Projects
 This repository contains projects that cover the basics of Financial Modeling, using the Financial Modeling course available on [GitHub](https://nickderobertis.github.io/fin-model-course/), taught by Nick DeRobertis, with lecture videos and tutorials available on [YouTube](https://www.youtube.com/playlist?list=PLACKX9tziAQJSk4YSGN0N2II985HTIuHD). This course helped me gain a better understanding and implementation of Financial Modeling by using tools like Excel and Python covering basics of Financial Modeling, such as TVM Models, Probabilistic Loan Pricing, etc.
@@ -76,3 +76,12 @@ The functions we will be using for the calculation of the Time Value of Money pr
 * Lastly, I calculated the NPV on Excel and Python using the built-in functions to obtain the NPV of the project. Since the NPV is positive, we can say that the project is profitable, and can be picked up by the company for future growth.
 
 That concludes the first project - my version and understanding of the TVM Model, both in Excel and Python!
+
+### Lab Exercise Extension - Sensitivity Analysis for Project 1 in Python:
+For this lab exercise, I tweaked the current code to accommodate two changes to the ModelInputs class:
+* Convert the inputs to keys in dictionaries
+* Convert two such keys, namely ```n_machines``` and ```d_1``` to keys with multiple inputs.
+
+For the above requirements, I displayed the obtained NPV array varying with the above multiple inputs and styled the results using the Hex-bin plots and a styled gradient background for the DataFrame.
+
+The solution can be found in the Lab Exercise folder, with the file named "Sensitivity Analysis - Project 1 Extension Solution.ipynb"
